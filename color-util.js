@@ -1,19 +1,11 @@
-// @flow
-export type RGBA = {
-  r: number,
-  g: number,
-  b: number,
-  a: number,
-};
-
 const NEARBY_THRESHOLD = 15;
 
-export function getRandom(min: number, max: number) {
+export function getRandom(min, max) {
   const range = max - min;
   return Math.floor(Math.random() * range) - min;
 }
 
-export function getNearbyValue(n: number, threshold = NEARBY_THRESHOLD, min, max): n {
+export function getNearbyValue(n, threshold = NEARBY_THRESHOLD, min, max) {
   const variance = getRandom(0, threshold);
   const negate = !!getRandom(0, 1);
   const nearby = n + (negate ? -variance : variance);
@@ -25,7 +17,7 @@ export function getNearbyValue(n: number, threshold = NEARBY_THRESHOLD, min, max
   return nearby;
 }
 
-export function isSameColor(a: RGBA, b: RGBA): boolean {
+export function isSameColor(a, b) {
   return (
     a.r === b.r &&
     a.g === b.g &&
@@ -37,7 +29,7 @@ export function createColor(r, g, b, a = 255) {
   return { r, g, b, a};
 }
 
-export function getNearbyColor(rgba: RGBA, threshold): RGBA {
+export function getNearbyColor(rgba, threshold) {
   return {
     r: getNearbyValue(rgba.r, threshold, 0, 255),
     g: getNearbyValue(rgba.g, threshold, 0, 255),

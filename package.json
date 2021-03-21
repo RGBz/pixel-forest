@@ -6,26 +6,20 @@
   "author": "RGBz",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node --presets latest,flow index",
-    "color-test": "babel-node --presets latest,flow color-util"
+    "start": "babel-node --presets latest index",
+    "color-test": "babel-node --presets latest color-util"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
-    "babel-preset-flow": "^1.0.0",
-    "babel-preset-latest": "^6.16.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2"
+    "babel-preset-latest": "^6.16.0"
   },
   "babel": {
     "presets": [
-      "latest",
-      "flow"
+      "latest"
     ]
   },
   "dependencies": {
-    "async": "^2.1.4",
     "gifencoder": "^1.0.6",
     "jimp": "^0.2.27",
     "png-file-stream": "^1.0.0"
